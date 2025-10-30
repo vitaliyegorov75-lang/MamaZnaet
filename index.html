@@ -3,62 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>МамаЗнает — помощь молодым мамам</title>
+    <title>МамаЗнает — помощь и поддержка для молодых мам</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>МамаЗнает</h1>
-        <p>Всё, что нужно знать о уходе за малышом</p>
+    <!-- Хедер -->
+    <header class="main-header">
+        <div class="header-content">
+            <h1 class="site-title">🤱 МамаЗнает</h1>
+            <p class="site-subtitle">Ваш надёжный помощник в уходе за малышом</p>
+        </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="care.html">Уход за младенцем</a></li>
-            <li><a href="nutrition.html">Питание</a></li>
-            <li><a href="health.html">Здоровье</a></li>
-            <li><a href="routine.html">Режим и сон</a></li>
-            <li><a href="psychology.html">Психология</a></li>
-            <li><a href="checklists.html">Чек-листы</a></li>
-            <li><a href="faq.html">Вопросы-ответы</a></li>
-        </ul>
+    <!-- Навигация -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">🏠 Главная</a></li>
+                <li><a href="care.html" class="nav-link">👶 Уход</a></li>
+                <li><a href="nutrition.html" class="nav-link">🍎 Питание</a></li>
+                <li><a href="health.html" class="nav-link">🩺 Здоровье</a></li>
+                <li><a href="routine.html" class="nav-link">💤 Сон</a></li>
+                <li><a href="psychology.html" class="nav-link">💝 Психология</a></li>
+                <li><a href="checklists.html" class="nav-link">✅ Чек-листы</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <main>
-        <!-- Герой-секция с изображением -->
-        <div class="hero-with-image">
-            <div class="hero-text">
-                <h2>МамаЗнает — ваш надёжный помощник</h2>
-                <p>Проверенные советы, поддержка сообщества и забота о самом главном — вашем малыше</p>
-                <div class="hero-features">
-                    <div class="feature">✓ Советы от педиатров</div>
-                    <div class="feature">✓ Поддержка других мам</div>
-                    <div class="feature">✓ Проверенные методики</div>
+    <!-- Основной контент -->
+    <main class="main-content">
+        
+        <!-- Герой-секция -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <h2 class="hero-title">Добро пожаловать в сообщество мудрых мам! 🌸</h2>
+                    <p class="hero-description">Здесь каждая мама найдёт ответы, поддержку и вдохновение для счастливого материнства</p>
+                    
+                    <div class="hero-features">
+                        <div class="feature-card">
+                            <span class="feature-icon">👩‍⚕️</span>
+                            <span class="feature-text">Советы педиатров</span>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">👭</span>
+                            <span class="feature-text">Поддержка мам</span>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">📚</span>
+                            <span class="feature-text">Проверенные методики</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="images/MotherBaby.jpg" alt="Счастливая мама с малышом на руках" class="main-hero-image">
+                    <div class="image-caption">Каждый момент — особенный 💕</div>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="images/MotherBaby.jpg" alt="Мама нежно держит малыша на руках" class="main-photo">
+        </section>
+
+        <!-- Популярные статьи -->
+        <section class="popular-section">
+            <div class="section-header">
+                <h2>🔥 Популярные статьи</h2>
+                <p>Самое актуальное для вас сегодня</p>
             </div>
-        </div>
-
-        <!-- Остальной контент -->
-        <section class="popular-topics">
-            <h2>Популярное сегодня</h2>
-            <ul>
-                <li><a href="breastfeeding-tips.html">10 советов по грудному вскармливанию</a></li>
-                <li>Как наладить сон малыша в 3 месяца</li>
-                <li>Первая помощь при лихорадке</li>
-            </ul>
+            
+            <div class="articles-grid">
+                <article class="article-card">
+                    <div class="article-icon">🍼</div>
+                    <h3 class="article-title">10 советов по грудному вскармливанию</h3>
+                    <p class="article-excerpt">Проверенные рекомендации для успешного ГВ</p>
+                    <a href="breastfeeding-tips.html" class="article-link">Читать →</a>
+                </article>
+                
+                <article class="article-card">
+                    <div class="article-icon">💤</div>
+                    <h3 class="article-title">Как наладить сон малыша</h3>
+                    <p class="article-excerpt">Эффективные методики для спокойных ночей</p>
+                    <a href="#" class="article-link">Читать →</a>
+                </article>
+                
+                <article class="article-card">
+                    <div class="article-icon">🌡️</div>
+                    <h3 class="article-title">Первая помощь при лихорадке</h3>
+                    <p class="article-excerpt">Что делать при высокой температуре</p>
+                    <a href="#" class="article-link">Читать →</a>
+                </article>
+            </div>
         </section>
 
+        <!-- Приветственный раздел -->
         <section class="welcome-section">
-            <h2>Добро пожаловать в сообщество мам!</h2>
-            <p>Поддержка, советы и дружеская атмосфера. Сообщество заботливых мам. Здесь вы найдёте проверенные советы по уходу за ребёнком, графики развития и поддержку других мам.</p>
+            <div class="welcome-container">
+                <h2>💝 Вы не одна!</h2>
+                <p>Мы создали это пространство, чтобы каждая мама могла найти поддержку, получить проверенные советы и делиться своим опытом. Здесь вас понимают и всегда готовы помочь.</p>
+                
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Полезных статей</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Поддержка</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1000+</div>
+                        <div class="stat-label">Довольных мам</div>
+                    </div>
+                </div>
+            </div>
         </section>
+
     </main>
 
-    <footer>
-        <p>&copy; 2025 МамаЗнает. Виталий Егоров. Все права защищены.</p>
+    <!-- Футер -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>🤱 МамаЗнает</h3>
+                <p>Помощь и поддержка для счастливого материнства</p>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 МамаЗнает. Виталий Егоров. Все права защищены.</p>
+            </div>
+        </div>
     </footer>
+
 </body>
 </html>
