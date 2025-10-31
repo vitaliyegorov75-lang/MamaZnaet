@@ -591,3 +591,174 @@ article, .tip, .article-card {
         margin-top: 1rem;
     }
 }
+
+/* === КОМПАКТНЫЙ ДИЗАЙН ДЛЯ МОБИЛЬНЫХ === */
+
+@media (max-width: 768px) {
+    /* Компактная шапка */
+    .main-header {
+        padding: 1rem 0;
+    }
+    
+    .site-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .site-subtitle {
+        font-size: 1rem;
+        opacity: 0.9;
+    }
+    
+    /* Компактное меню */
+    .main-nav {
+        position: relative;
+        top: auto;
+        padding: 0.5rem 0;
+    }
+    
+    .nav-menu {
+        gap: 0.3rem;
+        padding: 0.5rem 0;
+    }
+    
+    .nav-link {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Уменьшаем герой-секцию */
+    .hero-container {
+        padding: 1.5rem;
+        margin: 1rem 0;
+        gap: 1.5rem;
+    }
+    
+    .hero-title {
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-features {
+        gap: 0.5rem;
+    }
+    
+    .feature-card {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Уменьшаем основной контент */
+    .main-content {
+        padding: 0 1rem;
+    }
+    
+    .section-header {
+        margin: 2rem 0 1rem 0;
+    }
+    
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* === ДОПОЛНИТЕЛЬНЫЕ ИСПРАВЛЕНИЯ ДЛЯ ОЧЕНЬ МАЛЕНЬКИХ ЭКРАНОВ === */
+
+@media (max-width: 480px) {
+    /* Ещё более компактная шапка */
+    .main-header {
+        padding: 0.8rem 0;
+    }
+    
+    .site-title {
+        font-size: 1.6rem;
+    }
+    
+    .site-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    /* Ещё более компактное меню */
+    .nav-menu {
+        gap: 0.2rem;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    /* Компактная герой-секция */
+    .hero-container {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 1.3rem;
+    }
+    
+    .hero-description {
+        font-size: 0.95rem;
+    }
+    
+    .feature-card {
+        padding: 0.6rem;
+        font-size: 0.85rem;
+    }
+    
+    /* Уменьшаем изображение */
+    .main-hero-image {
+        max-width: 300px;
+    }
+    
+    .image-caption {
+        font-size: 0.9rem;
+    }
+    
+    /* Компактные карточки */
+    .article-card {
+        padding: 1.2rem;
+    }
+    
+    .article-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* === ОБЩИЕ УЛУЧШЕНИЯ ДЛЯ ВСЕХ УСТРОЙСТВ === */
+
+/* Немного уменьшаем шапку и на десктопах */
+@media (min-width: 769px) {
+    .main-header {
+        padding: 1.5rem 0;
+    }
+    
+    .site-title {
+        font-size: 2.5rem;
+    }
+    
+    .site-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .nav-link {
+        padding: 0.7rem 1.2rem;
+    }
+}
+
+/* Убедимся, что контент не перекрывается */
+.main-content {
+    scroll-margin-top: 1rem;
+}
+
+/* Плавная прокрутка к якорям */
+html {
+    scroll-behavior: smooth;
+}
