@@ -5,6 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>МамаЗнает — помощь и поддержка для молодых мам</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Увеличиваем шрифт навигации для мобильных */
+        @media (max-width: 768px) {
+            .nav-link {
+                font-size: 1rem !important;
+                padding: 1rem 1.2rem !important;
+                margin: 0.3rem;
+            }
+            
+            .nav-menu {
+                gap: 0.5rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-link {
+                font-size: 0.95rem !important;
+                padding: 0.9rem 1rem !important;
+                margin: 0.2rem;
+            }
+            
+            .nav-menu {
+                gap: 0.3rem !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Хедер -->
@@ -17,19 +43,19 @@
 
     <!-- Навигация -->
     <nav class="main-nav">
-    <div class="nav-container">
-        <ul class="nav-menu">
-            <li><a href="index.html" class="nav-link">🏠 Главная</a></li>
-            <li><a href="care.html" class="nav-link">👶 Уход</a></li>
-            <li><a href="nutrition.html" class="nav-link">🍎 Питание</a></li>
-            <li><a href="health.html" class="nav-link">🩺 Здоровье</a></li>
-            <li><a href="routine.html" class="nav-link">💤 Сон</a></li>
-            <li><a href="psychology.html" class="nav-link">💝 Психология</a></li>
-            <li><a href="faq.html" class="nav-link">❓ Вопрос-Ответ</a></li>
-            <li><a href="contact.html" class="nav-link">📞 Контакты</a></li>
-        </ul>
-    </div>
-</nav>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">🏠 Главная</a></li>
+                <li><a href="care.html" class="nav-link">👶 Уход</a></li>
+                <li><a href="nutrition.html" class="nav-link">🍎 Питание</a></li>
+                <li><a href="health.html" class="nav-link">🩺 Здоровье</a></li>
+                <li><a href="routine.html" class="nav-link">💤 Сон</a></li>
+                <li><a href="psychology.html" class="nav-link">💝 Психология</a></li>
+                <li><a href="faq.html" class="nav-link">❓ Вопрос-Ответ</a></li>
+                <li><a href="contact.html" class="nav-link">📞 Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- Основной контент -->
     <main class="main-content">
@@ -92,6 +118,27 @@
                     <p class="article-excerpt">Что делать при высокой температуре</p>
                     <a href="#" class="article-link">Читать →</a>
                 </article>
+
+                <article class="article-card">
+                    <div class="article-icon">👶</div>
+                    <h3 class="article-title">Развитие ребенка по месяцам</h3>
+                    <p class="article-excerpt">Что должен уметь малыш в каждом возрасте</p>
+                    <a href="#" class="article-link">Читать →</a>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-icon">🍎</div>
+                    <h3 class="article-title">Первый прикорм</h3>
+                    <p class="article-excerpt">Как правильно вводить новые продукты</p>
+                    <a href="#" class="article-link">Читать →</a>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-icon">😊</div>
+                    <h3 class="article-title">Эмоциональное развитие</h3>
+                    <p class="article-excerpt">Как поддержать психологическое здоровье</p>
+                    <a href="#" class="article-link">Читать →</a>
+                </article>
             </div>
         </section>
 
@@ -114,6 +161,34 @@
                         <div class="stat-number">1000+</div>
                         <div class="stat-label">Довольных мам</div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Новый раздел - Эксперты -->
+        <section class="welcome-section">
+            <div class="welcome-container">
+                <h2>👩‍⚕️ Наши эксперты</h2>
+                <p>Мы сотрудничаем с лучшими специалистами в области педиатрии, психологии и развития детей</p>
+                
+                <div class="articles-grid">
+                    <article class="article-card">
+                        <div class="article-icon">🩺</div>
+                        <h3 class="article-title">Педиатры</h3>
+                        <p class="article-excerpt">Сертифицированные врачи с многолетним опытом</p>
+                    </article>
+                    
+                    <article class="article-card">
+                        <div class="article-icon">💝</div>
+                        <h3 class="article-title">Психологи</h3>
+                        <p class="article-excerpt">Специалисты по детскому развитию и семейным отношениям</p>
+                    </article>
+                    
+                    <article class="article-card">
+                        <div class="article-icon">🍎</div>
+                        <h3 class="article-title">Диетологи</h3>
+                        <p class="article-excerpt">Эксперты по детскому питанию и прикорму</p>
+                    </article>
                 </div>
             </div>
         </section>
