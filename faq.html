@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вопросы-Ответы | МамаЗнает</title>
     <style>
-        /* Общие стили */
+        /* Общие стили как на других страницах */
         * {
             margin: 0;
             padding: 0;
@@ -13,90 +13,119 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 20px;
+            color: #333;
+            line-height: 1.6;
         }
 
-        /* Контейнер страницы */
-        .page-container {
+        .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
         }
 
-        /* Заголовок страницы */
+        /* Хедер как на других страницах */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Основной контент */
+        .main-content {
+            padding: 3rem 0;
+        }
+
         .page-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 3rem;
             color: white;
         }
 
         .page-title {
             font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 1rem;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .page-subtitle {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             opacity: 0.9;
-            font-weight: 300;
         }
 
-        /* Основной контент */
-        .main-content {
+        /* Сетка контента */
+        .content-grid {
             display: grid;
             grid-template-columns: 1fr 350px;
-            gap: 30px;
+            gap: 2rem;
             align-items: start;
         }
 
-        /* Стили для рубрики Вопрос-Ответ */
+        /* Секция FAQ */
         .faq-section {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #f1f5f9;
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .section-title {
             font-size: 1.8rem;
-            font-weight: 700;
-            color: #e91e63;
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
 
+        /* Поиск и категории */
         .search-box {
             position: relative;
-            max-width: 300px;
+            margin-bottom: 1.5rem;
         }
 
         .search-box input {
             width: 100%;
             padding: 12px 20px 12px 45px;
-            border: 2px solid #ffcdd2;
+            border: 2px solid #e0e0e0;
             border-radius: 25px;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            background: #fce4ec;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
         }
 
         .search-box input:focus {
             outline: none;
-            border-color: #e91e63;
-            background: white;
-            box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.1);
+            border-color: #667eea;
         }
 
         .search-icon {
@@ -104,88 +133,80 @@
             left: 15px;
             top: 50%;
             transform: translateY(-50%);
-            color: #e91e63;
+            color: #667eea;
         }
 
-        /* Категории */
-        .faq-categories {
+        .categories {
             display: flex;
-            gap: 10px;
-            margin-bottom: 25px;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
             flex-wrap: wrap;
         }
 
         .category-btn {
-            padding: 10px 20px;
-            border: 2px solid #ffcdd2;
+            padding: 8px 16px;
+            border: 2px solid #667eea;
             border-radius: 20px;
             background: white;
-            color: #e91e63;
-            font-weight: 600;
+            color: #667eea;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
 
         .category-btn:hover,
         .category-btn.active {
-            background: #e91e63;
+            background: #667eea;
             color: white;
-            border-color: #e91e63;
         }
 
-        .faq-container {
+        /* Вопросы-ответы */
+        .faq-list {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 1rem;
         }
 
         .faq-item {
-            background: #ffffff;
-            border: 2px solid #fce4ec;
-            border-radius: 16px;
-            padding: 28px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: all 0.4s ease;
-            position: relative;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 1.5rem;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
 
         .faq-item:hover {
-            box-shadow: 0 12px 30px rgba(233, 30, 99, 0.15);
-            border-color: #e91e63;
-            transform: translateY(-4px);
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
         }
 
         .faq-item.expanded {
-            border-color: #e91e63;
-            background: #fce4ec;
+            border-color: #667eea;
+            background: #f0f4ff;
         }
 
         .faq-question {
-            color: #1e293b;
             font-weight: 600;
-            font-size: 18px;
-            line-height: 1.5;
-            padding-right: 40px;
+            font-size: 1.1rem;
+            color: #333;
             display: flex;
-            align-items: flex-start;
-            gap: 12px;
+            align-items: center;
+            gap: 1rem;
         }
 
         .question-icon {
-            color: #e91e63;
+            color: #667eea;
             font-weight: bold;
-            font-size: 16px;
-            min-width: 20px;
+            font-size: 1.2rem;
         }
 
         .faq-answer {
-            color: #475569;
-            line-height: 1.7;
-            font-size: 15px;
-            padding-top: 16px;
-            margin-top: 16px;
-            border-top: 1px solid #f1f5f9;
+            color: #666;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e9ecef;
             display: none;
             animation: fadeIn 0.3s ease;
         }
@@ -195,74 +216,64 @@
         }
 
         .expand-icon {
-            position: absolute;
-            top: 28px;
-            right: 28px;
-            color: #64748b;
-            font-size: 20px;
+            margin-left: auto;
             transition: transform 0.3s ease;
+            color: #667eea;
         }
 
         .faq-item.expanded .expand-icon {
             transform: rotate(180deg);
-            color: #e91e63;
         }
 
         /* Боковая панель */
         .sidebar {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 1.5rem;
         }
 
         .ask-form {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .form-title {
             font-size: 1.4rem;
-            font-weight: 700;
-            color: #e91e63;
-            margin-bottom: 20px;
+            color: #667eea;
+            margin-bottom: 1.5rem;
             text-align: center;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 0.5rem;
             font-weight: 600;
-            color: #374151;
-            font-size: 14px;
+            color: #333;
         }
 
         .form-group input,
-        .form-group textarea,
-        .form-group select {
+        .form-group select,
+        .form-group textarea {
             width: 100%;
-            padding: 14px;
-            border: 2px solid #ffcdd2;
-            border-radius: 12px;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            background: #fce4ec;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
             font-family: inherit;
         }
 
         .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
+        .form-group select:focus,
+        .form-group textarea:focus {
             outline: none;
-            border-color: #e91e63;
-            background: white;
-            box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.1);
+            border-color: #667eea;
         }
 
         .form-group textarea {
@@ -272,266 +283,287 @@
 
         .submit-btn {
             width: 100%;
-            background: linear-gradient(135deg, #e91e63, #ad1457);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             border: none;
-            padding: 16px;
-            border-radius: 12px;
-            font-size: 16px;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
+            transition: transform 0.3s ease;
         }
 
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(233, 30, 99, 0.4);
         }
 
         .stats-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
         }
 
         .stats-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #e91e63;
-            margin-bottom: 15px;
+            font-size: 1.2rem;
+            color: #667eea;
+            margin-bottom: 1rem;
         }
 
         .stats-number {
             font-size: 2.5rem;
-            font-weight: 700;
-            color: #e91e63;
-            margin-bottom: 5px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
         }
 
         .stats-label {
-            color: #64748b;
-            font-size: 14px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Футер как на других страницах */
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem 0;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+        .copyright {
+            color: #666;
+            font-size: 0.9rem;
         }
 
         /* Анимации */
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .faq-item {
-            animation: fadeIn 0.5s ease-out;
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Адаптивность */
         @media (max-width: 768px) {
-            .main-content {
+            .content-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
             }
             
             .page-title {
                 font-size: 2rem;
             }
-            
-            .faq-section {
-                padding: 25px;
-            }
-            
-            .section-header {
-                flex-direction: column;
-                gap: 15px;
-                align-items: stretch;
-            }
-            
-            .search-box {
-                max-width: 100%;
-            }
-            
-            .faq-categories {
-                justify-content: center;
-            }
         }
     </style>
 </head>
 <body>
-    <div class="page-container">
-        <header class="page-header">
-            <h1 class="page-title">Вопросы-Ответы</h1>
-            <p class="page-subtitle">МамаЗнает — ответы на ваши вопросы о материнстве и детях</p>
-        </header>
+    <!-- Хедер -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">МамаЗнает</a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="faq.html" style="color: #667eea;">Вопросы-Ответы</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-        <div class="main-content">
-            <!-- Основная секция с вопросами -->
-            <section class="faq-section">
-                <div class="section-header">
-                    <h2 class="section-title">Частые вопросы от мам</h2>
+    <!-- Основной контент -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Вопросы-Ответы</h1>
+                <p class="page-subtitle">Найдите ответы на часто задаваемые вопросы о материнстве и детях</p>
+            </div>
+
+            <div class="content-grid">
+                <!-- Основная секция FAQ -->
+                <section class="faq-section">
+                    <h2 class="section-title">Частые вопросы</h2>
+                    
                     <div class="search-box">
                         <span class="search-icon">🔍</span>
                         <input type="text" placeholder="Поиск по вопросам...">
                     </div>
-                </div>
 
-                <div class="faq-categories">
-                    <button class="category-btn active" data-category="all">Все вопросы</button>
-                    <button class="category-btn" data-category="baby">Младенцы</button>
-                    <button class="category-btn" data-category="health">Здоровье</button>
-                    <button class="category-btn" data-category="development">Развитие</button>
-                    <button class="category-btn" data-category="care">Уход</button>
-                </div>
-
-                <div class="faq-container">
-                    <!-- Вопрос 1 -->
-                    <div class="faq-item" onclick="toggleFAQ(this)" data-category="baby">
-                        <div class="faq-question">
-                            <span class="question-icon">Q</span>
-                            Как правильно организовать режим дня для новорожденного?
-                        </div>
-                        <div class="faq-answer">
-                            Режим дня новорожденного должен быть гибким. Основные принципы: кормление по требованию, сон 16-18 часов в сутки, обязательные прогулки 2 раза в день. Первые 3 месяца ориентируйтесь на потребности ребенка, затем постепенно формируйте ритм.
-                        </div>
-                        <span class="expand-icon">▼</span>
+                    <div class="categories">
+                        <button class="category-btn active" data-category="all">Все</button>
+                        <button class="category-btn" data-category="baby">Младенцы</button>
+                        <button class="category-btn" data-category="health">Здоровье</button>
+                        <button class="category-btn" data-category="development">Развитие</button>
+                        <button class="category-btn" data-category="care">Уход</button>
                     </div>
 
-                    <!-- Вопрос 2 -->
-                    <div class="faq-item" onclick="toggleFAQ(this)" data-category="health">
-                        <div class="faq-question">
-                            <span class="question-icon">Q</span>
-                            Какие прививки обязательны в первый год жизни?
+                    <div class="faq-list">
+                        <!-- Вопрос 1 -->
+                        <div class="faq-item" onclick="toggleFAQ(this)" data-category="baby">
+                            <div class="faq-question">
+                                <span class="question-icon">Q</span>
+                                Как правильно организовать режим дня для новорожденного?
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                Режим дня новорожденного должен быть гибким. Основные принципы: кормление по требованию, сон 16-18 часов в сутки, обязательные прогулки 2 раза в день. Первые 3 месяца ориентируйтесь на потребности ребенка.
+                            </div>
                         </div>
-                        <div class="faq-answer">
-                            По национальному календарю прививок: гепатит B (первые 24 часа), БЦЖ (3-7 день), АКДС (3, 4.5, 6 месяцев), полиомиелит, гемофильная инфекция, КПК (корь, паротит, краснуха) в 12 месяцев. Перед каждой прививкой обязателен осмотр педиатра.
+
+                        <!-- Вопрос 2 -->
+                        <div class="faq-item" onclick="toggleFAQ(this)" data-category="health">
+                            <div class="faq-question">
+                                <span class="question-icon">Q</span>
+                                Какие прививки обязательны в первый год жизни?
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                По национальному календарю: гепатит B (первые 24 часа), БЦЖ (3-7 день), АКДС (3, 4.5, 6 месяцев), полиомиелит, гемофильная инфекция, КПК (корь, паротит, краснуха) в 12 месяцев.
+                            </div>
                         </div>
-                        <span class="expand-icon">▼</span>
+
+                        <!-- Вопрос 3 -->
+                        <div class="faq-item" onclick="toggleFAQ(this)" data-category="development">
+                            <div class="faq-question">
+                                <span class="question-icon">Q</span>
+                                Когда ребенок должен начать говорить первые слова?
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                Первые осознанные слова появляются в 10-14 месяцев. К 1.5 годам словарный запас 20-50 слов, к 2 годам — 200-300 слов. Если к 2 годам ребенок говорит менее 50 слов, рекомендуется консультация специалистов.
+                            </div>
+                        </div>
+
+                        <!-- Вопрос 4 -->
+                        <div class="faq-item" onclick="toggleFAQ(this)" data-category="care">
+                            <div class="faq-question">
+                                <span class="question-icon">Q</span>
+                                Как правильно вводить прикорм?
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                Прикорм начинают в 4-6 месяцев. Первые продукты: овощные пюре (кабачок, цветная капуста) или безглютеновые каши. Новые продукты вводите по одному, начиная с 1/2 чайной ложки.
+                            </div>
+                        </div>
+
+                        <!-- Вопрос 5 -->
+                        <div class="faq-item" onclick="toggleFAQ(this)" data-category="health">
+                            <div class="faq-question">
+                                <span class="question-icon">Q</span>
+                                Что должно быть в домашней аптечке для ребенка?
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                Обязательно: жаропонижающее, антисептики, перевязочные материалы, средства для регидратации, назальный аспиратор, термометр. Все препараты — по назначению врача.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Боковая панель -->
+                <aside class="sidebar">
+                    <!-- Форма вопроса -->
+                    <div class="ask-form">
+                        <h3 class="form-title">Задать вопрос эксперту</h3>
+                        <form id="questionForm" action="https://formspree.io/f/your-formspree-id" method="POST">
+                            <div class="form-group">
+                                <label for="name">Ваше имя</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email для ответа</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="childAge">Возраст ребенка</label>
+                                <select id="childAge" name="childAge">
+                                    <option value="">Выберите возраст</option>
+                                    <option value="0-1">0-1 год</option>
+                                    <option value="1-3">1-3 года</option>
+                                    <option value="3-7">3-7 лет</option>
+                                    <option value="7+">Старше 7 лет</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="question">Ваш вопрос</label>
+                                <textarea id="question" name="question" placeholder="Опишите вашу ситуацию..." required></textarea>
+                            </div>
+                            
+                            <input type="hidden" name="_subject" value="Новый вопрос эксперту - МамаЗнает">
+                            <input type="hidden" name="_replyto" value="Mamaznaet.help@yandex.ru">
+                            
+                            <button type="submit" class="submit-btn">Отправить вопрос</button>
+                        </form>
                     </div>
 
-                    <!-- Вопрос 3 -->
-                    <div class="faq-item" onclick="toggleFAQ(this)" data-category="development">
-                        <div class="faq-question">
-                            <span class="question-icon">Q</span>
-                            Когда ребенок должен начать говорить первые слова?
+                    <!-- Статистика -->
+                    <div class="stats-card">
+                        <h4 class="stats-title">Помогаем мамам</h4>
+                        <div class="stats-number">2,847</div>
+                        <div class="stats-label">ответов на вопросы</div>
+                        <div style="margin-top: 1rem;">
+                            <div class="stats-number">98%</div>
+                            <div class="stats-label">мам получили помощь</div>
                         </div>
-                        <div class="faq-answer">
-                            Первые осознанные слова появляются в 10-14 месяцев. К 1.5 годам словарный запас 20-50 слов, к 2 годам — 200-300 слов. Если к 2 годам ребенок говорит менее 50 слов, рекомендуется консультация логопеда и невролога.
-                        </div>
-                        <span class="expand-icon">▼</span>
                     </div>
-
-                    <!-- Вопрос 4 -->
-                    <div class="faq-item" onclick="toggleFAQ(this)" data-category="care">
-                        <div class="faq-question">
-                            <span class="question-icon">Q</span>
-                            Как правильно вводить прикорм?
-                        </div>
-                        <div class="faq-answer">
-                            Прикорм начинают в 4-6 месяцев. Первые продукты: овощные пюре (кабачок, цветная капуста) или безглютеновые каши (рисовая, гречневая). Новые продукты вводите по одному, начиная с 1/2 чайной ложки, наблюдая за реакцией 3-5 дней.
-                        </div>
-                        <span class="expand-icon">▼</span>
-                    </div>
-
-                    <!-- Вопрос 5 -->
-                    <div class="faq-item" onclick="toggleFAQ(this)" data-category="health">
-                        <div class="faq-question">
-                            <span class="question-icon">Q</span>
-                            Что должно быть в домашней аптечке для ребенка?
-                        </div>
-                        <div class="faq-answer">
-                            Обязательно: жаропонижающее (парацетамол, ибупрофен), антисептики, перевязочные материалы, средства для регидратации, назальный аспиратор, газоотводная трубочка, термометр, антигистаминные капли. Все препараты — по назначению врача.
-                        </div>
-                        <span class="expand-icon">▼</span>
-                    </div>
-
-                    <!-- Вопрос 6 -->
-                    <div class="faq-item" onclick="toggleFAQ(this)" data-category="development">
-                        <div class="faq-question">
-                            <span class="question-icon">Q</span>
-                            Как развивать мелкую моторику у ребенка до года?
-                        </div>
-                        <div class="faq-answer">
-                            Используйте пальчиковые игры, массаж ладошек, игрушки с разной текстурой, сенсорные мешочки. С 6 месяцев — перекладывание мелких предметов (под присмотром!), лепка из мягкого пластилина, рисование пальчиковыми красками.
-                        </div>
-                        <span class="expand-icon">▼</span>
-                    </div>
-
-                    <!-- Вопрос 7 -->
-                    <div class="faq-item" onclick="toggleFAQ(this)" data-category="baby">
-                        <div class="faq-question">
-                            <span class="question-icon">Q</span>
-                            Сколько должен спать ребенок в 6 месяцев?
-                        </div>
-                        <div class="faq-answer">
-                            В 6 месяцев общая продолжительность сна 14-15 часов: ночной сон 10-12 часов и 2-3 дневных сна по 1.5-2 часа. Важны ритуалы перед сном: купание, колыбельная, чтение книг. Комфортная температура в комнате 18-22°C.
-                        </div>
-                        <span class="expand-icon">▼</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Боковая панель -->
-            <aside class="sidebar">
-                <!-- Форма вопроса -->
-                <div class="ask-form">
-                    <h3 class="form-title">Задать вопрос эксперту</h3>
-                    <form id="questionForm">
-                        <div class="form-group">
-                            <label for="name">Ваше имя</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="childAge">Возраст ребенка</label>
-                            <select id="childAge" name="childAge">
-                                <option value="">Выберите возраст</option>
-                                <option value="0-1">0-1 год</option>
-                                <option value="1-3">1-3 года</option>
-                                <option value="3-7">3-7 лет</option>
-                                <option value="7+">Старше 7 лет</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="category">Категория вопроса</label>
-                            <select id="category" name="category">
-                                <option value="">Выберите категорию</option>
-                                <option value="health">Здоровье</option>
-                                <option value="development">Развитие</option>
-                                <option value="care">Уход</option>
-                                <option value="nutrition">Питание</option>
-                                <option value="education">Воспитание</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="question">Ваш вопрос</label>
-                            <textarea id="question" name="question" placeholder="Опишите вашу ситуацию подробно..." required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Отправить вопрос</button>
-                    </form>
-                </div>
-
-                <!-- Статистика -->
-                <div class="stats-card">
-                    <h4 class="stats-title">Помогаем мамам</h4>
-                    <div class="stats-number">2,847</div>
-                    <div class="stats-label">ответов на вопросы</div>
-                    <div style="margin-top: 15px;">
-                        <div class="stats-number">98%</div>
-                        <div class="stats-label">мам получили помощь</div>
-                    </div>
-                </div>
-            </aside>
+                </aside>
+            </div>
         </div>
-    </div>
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">МамаЗнает</div>
+                <ul class="footer-links">
+                    <li><a href="privacy.html">Конфиденциальность</a></li>
+                    <li><a href="terms.html">Условия использования</a></li>
+                    <li><a href="contacts.html">Обратная связь</a></li>
+                </ul>
+                <div class="copyright">
+                    © 2024 МамаЗнает. Все права защищены.
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Функция для раскрытия/скрытия ответов
@@ -542,17 +574,7 @@
         // Обработчик формы
         document.getElementById('questionForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                childAge: document.getElementById('childAge').value,
-                category: document.getElementById('category').value,
-                question: document.getElementById('question').value
-            };
-
-            // Здесь обычно отправка на сервер
-            alert('Спасибо за ваш вопрос! Наш эксперт ответит вам в течение 24 часов.');
+            alert('Спасибо за ваш вопрос! Наш эксперт ответит в течение 24 часов.');
             this.reset();
         });
 
@@ -564,7 +586,7 @@
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question').textContent.toLowerCase();
                 if (question.includes(searchTerm)) {
-                    item.style.display = 'block';
+                    item.style.display = 'flex';
                 } else {
                     item.style.display = 'none';
                 }
@@ -574,9 +596,7 @@
         // Фильтрация по категориям
         document.querySelectorAll('.category-btn').forEach(btn => {
             btn.addEventListener('click', function() {
-                // Убираем активный класс у всех кнопок
                 document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-                // Добавляем активный класс текущей кнопке
                 this.classList.add('active');
                 
                 const category = this.dataset.category;
@@ -584,7 +604,7 @@
                 
                 faqItems.forEach(item => {
                     if (category === 'all' || item.dataset.category === category) {
-                        item.style.display = 'block';
+                        item.style.display = 'flex';
                     } else {
                         item.style.display = 'none';
                     }
