@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вопрос-Ответ - MamaZnaet</title>
+    <title>Вопрос-Ответ - МамаЗнает</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -34,216 +34,161 @@
     <!-- Основной контент -->
     <main class="main-content">
         
-        <!-- Введение -->
+        <!-- Приветственный раздел -->
         <section class="welcome-section">
             <div class="welcome-container">
-                <h2>🤔 Частые вопросы от мам</h2>
-                <p>Здесь собраны ответы на самые популярные вопросы о развитии, здоровье и воспитании детей. Не нашли ответ? Задайте свой вопрос внизу страницы!</p>
-            </div>
-        </section>
-
-        <!-- Поиск -->
-        <section class="welcome-section">
-            <div class="welcome-container">
-                <div class="search-box">
-                    <input type="text" placeholder="🔍 Введите вопрос для поиска..." id="searchInput">
+                <h2>🤔 Найдите ответы на ваши вопросы</h2>
+                <p>Мы собрали самые частые вопросы от родителей и подготовили подробные ответы с рекомендациями специалистов. Не нашли нужный ответ? Задайте свой вопрос в форме ниже!</p>
+                
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Ответов на вопросы</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Мамам помогли</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24ч</div>
+                        <div class="stat-label">Среднее время ответа</div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Категории -->
-        <section class="welcome-section">
-            <div class="welcome-container">
-                <div class="categories">
-                    <button class="category-btn active" data-category="all">Все вопросы</button>
-                    <button class="category-btn" data-category="baby">👶 Младенцы</button>
-                    <button class="category-btn" data-category="health">🩺 Здоровье</button>
-                    <button class="category-btn" data-category="development">🌟 Развитие</button>
-                    <button class="category-btn" data-category="nutrition">🍎 Питание</button>
-                    <button class="category-btn" data-category="care">💖 Уход</button>
-                </div>
+        <!-- Популярные вопросы -->
+        <section class="popular-section">
+            <div class="section-header">
+                <h2>🔥 Популярные вопросы</h2>
+                <p>Самые частые вопросы от мам</p>
             </div>
-        </section>
-
-        <!-- FAQ сетка -->
-        <div class="articles-grid">
             
-            <!-- Вопрос 1 -->
-            <article class="article-card" data-category="baby">
-                <div class="article-icon">👶</div>
-                <h3 class="article-title">Как правильно организовать режим дня для новорожденного?</h3>
-                <div class="article-content">
-                    <div class="tip">
-                        <strong>📅 Основные принципы:</strong>
-                        <ul>
-                            <li>Кормление по требованию в первые месяцы</li>
-                            <li>Сон 16-18 часов в сутки</li>
-                            <li>Обязательные прогулки 2 раза в день</li>
-                            <li>Гибкий график, ориентированный на потребности ребенка</li>
-                            <li>Постепенное формирование ритма с 3 месяцев</li>
-                        </ul>
+            <div class="articles-grid">
+                <article class="article-card">
+                    <div class="article-icon">👶</div>
+                    <h3 class="article-title">Режим дня новорожденного</h3>
+                    <p class="article-excerpt">Как правильно организовать сон, кормление и бодрствование</p>
+                    <div class="article-content" style="display: none;">
+                        <div class="tip">
+                            <strong>📅 Основные принципы:</strong>
+                            <ul>
+                                <li>Кормление по требованию в первые месяцы</li>
+                                <li>Сон 16-18 часов в сутки</li>
+                                <li>Обязательные прогулки 2 раза в день</li>
+                                <li>Гибкий график, ориентированный на потребности ребенка</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="tip">
-                        <strong>💡 Советы:</strong>
-                        <p>Первые 3 месяца следуйте за ребенком, затем мягко направляйте к более предсказуемому режиму. Вечерние ритуалы помогают настроиться на сон.</p>
+                    <a href="#" class="article-link" onclick="toggleAnswer(this); return false;">Читать ответ →</a>
+                </article>
+                
+                <article class="article-card">
+                    <div class="article-icon">💉</div>
+                    <h3 class="article-title">Прививки в первый год</h3>
+                    <p class="article-excerpt">Какие вакцины обязательны и когда их делать</p>
+                    <div class="article-content" style="display: none;">
+                        <div class="tip">
+                            <strong>💉 Национальный календарь:</strong>
+                            <ul>
+                                <li><strong>Первые 24 часа:</strong> Гепатит B</li>
+                                <li><strong>3-7 дней:</strong> БЦЖ</li>
+                                <li><strong>3, 4.5, 6 месяцев:</strong> АКДС, полиомиелит</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </article>
+                    <a href="#" class="article-link" onclick="toggleAnswer(this); return false;">Читать ответ →</a>
+                </article>
+                
+                <article class="article-card">
+                    <div class="article-icon">🗣️</div>
+                    <h3 class="article-title">Развитие речи</h3>
+                    <p class="article-excerpt">Когда ждать первые слова и как помочь заговорить</p>
+                    <div class="article-content" style="display: none;">
+                        <div class="tip">
+                            <strong>🗣️ Этапы развития:</strong>
+                            <ul>
+                                <li><strong>10-14 месяцев:</strong> Первые осознанные слова</li>
+                                <li><strong>1.5 года:</strong> 20-50 слов</li>
+                                <li><strong>2 года:</strong> 200-300 слов, фразы</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="#" class="article-link" onclick="toggleAnswer(this); return false;">Читать ответ →</a>
+                </article>
 
-            <!-- Вопрос 2 -->
-            <article class="article-card" data-category="health">
-                <div class="article-icon">🩺</div>
-                <h3 class="article-title">Какие прививки обязательны в первый год жизни?</h3>
-                <div class="article-content">
-                    <div class="tip">
-                        <strong>💉 Национальный календарь прививок:</strong>
-                        <ul>
-                            <li><strong>Первые 24 часа:</strong> Гепатит B</li>
-                            <li><strong>3-7 дней:</strong> БЦЖ</li>
-                            <li><strong>3, 4.5, 6 месяцев:</strong> АКДС</li>
-                            <li><strong>3, 4.5, 6 месяцев:</strong> Полиомиелит</li>
-                            <li><strong>3, 4.5, 6 месяцев:</strong> Гемофильная инфекция</li>
-                            <li><strong>12 месяцев:</strong> КПК (корь, паротит, краснуха)</li>
-                        </ul>
+                <article class="article-card">
+                    <div class="article-icon">🍎</div>
+                    <h3 class="article-title">Введение прикорма</h3>
+                    <p class="article-excerpt">Когда и как начинать прикармливать ребенка</p>
+                    <div class="article-content" style="display: none;">
+                        <div class="tip">
+                            <strong>🥄 Основные правила:</strong>
+                            <ul>
+                                <li><strong>Возраст:</strong> 4-6 месяцев</li>
+                                <li><strong>Первые продукты:</strong> Овощные пюре или каши</li>
+                                <li><strong>Начальная доза:</strong> 1/2 чайной ложки</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="warning">
-                        <strong>⚠️ Важно:</strong>
-                        <p>Перед каждой прививкой обязателен осмотр педиатра. Сообщайте врачу о любых изменениях в состоянии ребенка.</p>
-                    </div>
-                </div>
-            </article>
+                    <a href="#" class="article-link" onclick="toggleAnswer(this); return false;">Читать ответ →</a>
+                </article>
 
-            <!-- Вопрос 3 -->
-            <article class="article-card" data-category="development">
-                <div class="article-icon">🌟</div>
-                <h3 class="article-title">Когда ребенок должен начать говорить первые слова?</h3>
-                <div class="article-content">
-                    <div class="tip">
-                        <strong>🗣️ Этапы развития речи:</strong>
-                        <table>
-                            <tr>
-                                <th>Возраст</th>
-                                <th>Речевые навыки</th>
-                            </tr>
-                            <tr>
-                                <td>10-14 месяцев</td>
-                                <td>Первые осознанные слова</td>
-                            </tr>
-                            <tr>
-                                <td>1.5 года</td>
-                                <td>20-50 слов в активном словаре</td>
-                            </tr>
-                            <tr>
-                                <td>2 года</td>
-                                <td>200-300 слов, простые фразы</td>
-                            </tr>
-                            <tr>
-                                <td>3 года</td>
-                                <td>Сложные предложения, рассказы</td>
-                            </tr>
-                        </table>
+                <article class="article-card">
+                    <div class="article-icon">💤</div>
+                    <h3 class="article-title">Сон малыша</h3>
+                    <p class="article-excerpt">Сколько должен спать ребенок в разном возрасте</p>
+                    <div class="article-content" style="display: none;">
+                        <div class="tip">
+                            <strong>💤 Нормы сна:</strong>
+                            <ul>
+                                <li><strong>0-3 месяца:</strong> 16-18 часов</li>
+                                <li><strong>3-6 месяцев:</strong> 14-16 часов</li>
+                                <li><strong>6-12 месяцев:</strong> 13-15 часов</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="warning">
-                        <strong>👨‍⚕️ Когда обращаться к специалисту:</strong>
-                        <p>Если к 2 годам ребенок говорит менее 50 слов, рекомендуется консультация логопеда и невролога.</p>
-                    </div>
-                </div>
-            </article>
+                    <a href="#" class="article-link" onclick="toggleAnswer(this); return false;">Читать ответ →</a>
+                </article>
 
-            <!-- Вопрос 4 -->
-            <article class="article-card" data-category="nutrition">
-                <div class="article-icon">🍎</div>
-                <h3 class="article-title">Как правильно вводить прикорм?</h3>
-                <div class="article-content">
-                    <div class="tip">
-                        <strong>🥄 Основные правила:</strong>
-                        <ul>
-                            <li><strong>Возраст:</strong> 4-6 месяцев</li>
-                            <li><strong>Первые продукты:</strong> Овощные пюре или безглютеновые каши</li>
-                            <li><strong>Начальная доза:</strong> 1/2 чайной ложки</li>
-                            <li><strong>Новый продукт:</strong> Раз в 3-5 дней</li>
-                            <li><strong>Наблюдение:</strong> Следите за аллергическими реакциями</li>
-                        </ul>
+                <article class="article-card">
+                    <div class="article-icon">🩺</div>
+                    <h3 class="article-title">Детская аптечка</h3>
+                    <p class="article-excerpt">Что должно быть в домашней аптечке для ребенка</p>
+                    <div class="article-content" style="display: none;">
+                        <div class="tip">
+                            <strong>🩹 Обязательный набор:</strong>
+                            <ul>
+                                <li>Жаропонижающее (парацетамол, ибупрофен)</li>
+                                <li>Антисептики, бинты, пластыри</li>
+                                <li>Средства для регидратации</li>
+                                <li>Назальный аспиратор, термометр</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="tip">
-                        <strong>🎯 Последовательность введения:</strong>
-                        <ol>
-                            <li>Овощи (кабачок, цветная капуста, брокколи)</li>
-                            <li>Безглютеновые каши (рисовая, гречневая)</li>
-                            <li>Фруктовые пюре</li>
-                            <li>Мясо (индейка, кролик)</li>
-                            <li>Творог, кефир</li>
-                        </ol>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Вопрос 5 -->
-            <article class="article-card" data-category="health">
-                <div class="article-icon">💊</div>
-                <h3 class="article-title">Что должно быть в домашней аптечке для ребенка?</h3>
-                <div class="article-content">
-                    <div class="tip">
-                        <strong>🩹 Обязательный набор:</strong>
-                        <ul>
-                            <li><strong>Жаропонижающее:</strong> Парацетамол, ибупрофен</li>
-                            <li><strong>Антисептики:</strong> Перекись водорода, хлоргексидин</li>
-                            <li><strong>Перевязочные материалы:</strong> Бинты, пластыри, вата</li>
-                            <li><strong>Регидратация:</strong> Регидрон или аналоги</li>
-                            <li><strong>Для гигиены:</strong> Назальный аспиратор, газоотводная трубочка</li>
-                            <li><strong>Измерение:</strong> Термометр</li>
-                            <li><strong>От аллергии:</strong> Антигистаминные капли</li>
-                        </ul>
-                    </div>
-                    <div class="warning">
-                        <strong>💊 Важно:</strong>
-                        <p>Все лекарственные препараты применяйте только по назначению врача! Регулярно проверяйте сроки годности.</p>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Вопрос 6 -->
-            <article class="article-card" data-category="care">
-                <div class="article-icon">💖</div>
-                <h3 class="article-title">Как ухаживать за кожей новорожденного?</h3>
-                <div class="article-content">
-                    <div class="tip">
-                        <strong>🛁 Ежедневный уход:</strong>
-                        <ul>
-                            <li><strong>Купание:</strong> Ежедневно в воде 36-37°C</li>
-                            <li><strong>Средства:</strong> Детское мыло без отдушек</li>
-                            <li><strong>Увлажнение:</strong> Детский крем или масло</li>
-                            <li><strong>Подгузники:</strong> Смена каждые 2-3 часа</li>
-                            <li><strong>Воздушные ванны:</strong> 10-15 минут несколько раз в день</li>
-                        </ul>
-                    </div>
-                    <div class="tip">
-                        <strong>🚨 При проблемах:</strong>
-                        <ul>
-                            <li><strong>Опрелости:</strong> Чаще меняйте подгузник, используйте крем с цинком</li>
-                            <li><strong>Потница:</strong> Одевайте легче, поддерживайте прохладную температуру</li>
-                            <li><strong>Атопический дерматит:</strong> Консультация педиатра и дерматолога</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-
-        </div>
+                    <a href="#" class="article-link" onclick="toggleAnswer(this); return false;">Читать ответ →</a>
+                </article>
+            </div>
+        </section>
 
         <!-- Форма вопроса -->
         <section class="welcome-section">
             <div class="welcome-container">
-                <h2>💌 Не нашли ответ? Задайте свой вопрос!</h2>
-                <div class="article-card">
-                    <form id="questionForm" action="https://formspree.io/f/your-formspree-id" method="POST">
+                <h2>💌 Задайте свой вопрос</h2>
+                <p>Не нашли ответ на свой вопрос? Напишите нам, и наши эксперты помогут вам!</p>
+                
+                <div class="contact-form">
+                    <form id="questionForm">
                         <div class="form-group">
                             <label for="name">Ваше имя *</label>
                             <input type="text" id="name" name="name" required>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="email">Email для ответа *</label>
+                            <label for="email">Ваш email *</label>
                             <input type="email" id="email" name="email" required>
                         </div>
+                        
                         <div class="form-group">
                             <label for="childAge">Возраст ребенка</label>
                             <select id="childAge" name="childAge">
@@ -254,53 +199,14 @@
                                 <option value="7+">Старше 7 лет</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="category">Категория вопроса</label>
-                            <select id="category" name="category">
-                                <option value="">Выберите категорию</option>
-                                <option value="health">Здоровье</option>
-                                <option value="development">Развитие</option>
-                                <option value="nutrition">Питание</option>
-                                <option value="care">Уход</option>
-                                <option value="psychology">Психология</option>
-                                <option value="other">Другое</option>
-                            </select>
-                        </div>
+                        
                         <div class="form-group">
                             <label for="question">Ваш вопрос *</label>
-                            <textarea id="question" name="question" placeholder="Опишите вашу ситуацию подробно..." required></textarea>
+                            <textarea id="question" name="question" rows="5" placeholder="Опишите вашу ситуацию подробно..." required></textarea>
                         </div>
                         
-                        <input type="hidden" name="_subject" value="Новый вопрос эксперту - МамаЗнает">
-                        <input type="hidden" name="_replyto" value="Mamaznaet.help@yandex.ru">
-                        
-                        <button type="submit" class="submit-btn">📨 Отправить вопрос эксперту</button>
+                        <button type="submit" class="submit-btn">📨 Отправить вопрос</button>
                     </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- Статистика -->
-        <section class="welcome-section">
-            <div class="welcome-container">
-                <h2>📊 Мы уже помогли тысячам мам!</h2>
-                <div class="articles-grid">
-                    <div class="article-card">
-                        <h4>📈 2,847+</h4>
-                        <p>ответов на вопросы</p>
-                    </div>
-                    <div class="article-card">
-                        <h4>💯 98%</h4>
-                        <p>мам получили помощь</p>
-                    </div>
-                    <div class="article-card">
-                        <h4>⏱️ 24 часа</h4>
-                        <p>среднее время ответа</p>
-                    </div>
-                    <div class="article-card">
-                        <h4>👩‍⚕️ 15+</h4>
-                        <p>экспертов онлайн</p>
-                    </div>
                 </div>
             </div>
         </section>
@@ -311,7 +217,7 @@
     <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-info">
-                <h3>❓ MamaZnaet - Вопрос-Ответ</h3>
+                <h3>❓ Вопрос-Ответ</h3>
                 <p>Помогаем находить ответы на самые важные вопросы</p>
             </div>
             <div class="footer-copyright">
@@ -321,47 +227,26 @@
     </footer>
 
     <script>
-        // Поиск по вопросам
-        document.getElementById('searchInput').addEventListener('input', function(e) {
-            const searchTerm = e.target.value.toLowerCase().trim();
-            const articles = document.querySelectorAll('.article-card');
+        // Раскрытие ответов на вопросы
+        function toggleAnswer(link) {
+            const article = link.closest('.article-card');
+            const content = article.querySelector('.article-content');
+            const isVisible = content.style.display === 'block';
             
-            articles.forEach(article => {
-                const title = article.querySelector('.article-title').textContent.toLowerCase();
-                const content = article.querySelector('.article-content').textContent.toLowerCase();
-                
-                if (searchTerm === '' || title.includes(searchTerm) || content.includes(searchTerm)) {
-                    article.style.display = 'block';
-                } else {
-                    article.style.display = 'none';
-                }
+            // Скрываем все ответы
+            document.querySelectorAll('.article-content').forEach(item => {
+                item.style.display = 'none';
             });
-        });
-
-        // Фильтрация по категориям
-        document.querySelectorAll('.category-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                // Обновляем активную кнопку
-                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                
-                const category = this.dataset.category;
-                const articles = document.querySelectorAll('.article-card');
-                
-                articles.forEach(article => {
-                    if (category === 'all' || article.dataset.category === category) {
-                        article.style.display = 'block';
-                    } else {
-                        article.style.display = 'none';
-                    }
-                });
-            });
-        });
+            
+            // Показываем/скрываем текущий ответ
+            content.style.display = isVisible ? 'none' : 'block';
+            link.textContent = isVisible ? 'Читать ответ →' : 'Скрыть ответ ↑';
+        }
 
         // Обработчик формы
         document.getElementById('questionForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Спасибо за ваш вопрос! Наш эксперт ответит на указанный email в течение 24 часов.');
+            alert('Спасибо за ваш вопрос! Наш эксперт ответит вам в течение 24 часов.');
             this.reset();
         });
     </script>
