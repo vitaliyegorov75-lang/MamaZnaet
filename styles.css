@@ -574,3 +574,20 @@ article, .tip, .article-card {
         padding-top: 0.5rem;
     }
 }
+
+/* Полное исправление sticky-меню */
+@media (max-width: 768px) {
+    .main-nav {
+        position: relative !important;
+        top: auto !important;
+    }
+    
+    body {
+        padding-top: 0 !important;
+    }
+    
+    /* Добавляем отступ для первого элемента */
+    .main-content > *:first-child {
+        margin-top: 1rem;
+    }
+}
