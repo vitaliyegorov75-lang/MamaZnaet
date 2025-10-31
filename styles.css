@@ -522,3 +522,55 @@ article, .tip, .article-card {
         gap: 1rem;
     }
 }
+
+* Исправление для мобильного меню */
+@media (max-width: 768px) {
+    .main-nav {
+        position: relative; /* Убираем sticky на мобильных */
+        top: auto;
+    }
+    
+    .main-content {
+        padding-top: 1rem; /* Добавляем отступ сверху */
+    }
+    
+    /* Уменьшаем отступы для мобильных */
+    .hero-container {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+    
+    .article-card {
+        padding: 1.5rem;
+    }
+    
+    /* Уменьшаем размер заголовков */
+    .site-title {
+        font-size: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 1.6rem;
+    }
+}
+
+/* Дополнительные исправления для очень маленьких экранов */
+@media (max-width: 480px) {
+    .main-content {
+        padding: 0 0.5rem;
+    }
+    
+    .hero-container {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .welcome-section {
+        padding: 1.5rem 1rem;
+    }
+    
+    /* Убеждаемся, что контент не перекрывается */
+    .main-content section:first-child {
+        padding-top: 0.5rem;
+    }
+}
